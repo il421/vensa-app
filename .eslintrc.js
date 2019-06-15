@@ -4,6 +4,11 @@ module.exports = {
         "es6": true
     },
     "extends": ["eslint:recommended", "plugin:react/recommended"],
+    "settings": {
+      "import/resolver": {
+        "webpack": "webpack.config.js"
+      },
+    },
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
@@ -34,6 +39,9 @@ module.exports = {
         "semi": [
             "error",
             "always"
-        ]
+        ],
+        "no-console": "off",
+        "react/prop-types": 0,
+
     }
 };

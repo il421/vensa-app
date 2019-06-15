@@ -1,6 +1,13 @@
 @import './base/settings';
 @import './base/base';
-@import './components/nav';
+@import 'components/options';
 @import 'components/btn';
+@import 'components/nav';
+@import 'components/header';
+@import 'components/date-picker';
+@import 'components/date-selector';
+@import 'components/period-selector';
+@import 'components/doctor-list';
+@import 'components/doctor';
 @import './components/content-conteiner';
 @import './components/loader';

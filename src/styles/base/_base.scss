@@ -8,7 +8,7 @@ html {
 
 body {
   font-family: $font-stack;
-  font-size: $m-size;
+  font-size: $font-size-medium;
   line-height: 1.6
 }
 
@@ -22,4 +22,8 @@ button:disabled {
 
 button:focus {
   outline: none;
+}
+
+.pointer {
+  cursor: pointer;
 }

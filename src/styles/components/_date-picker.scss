@@ -1,0 +1,34 @@
+.date-picker {
+  padding-bottom: 15px;
+}
+
+.date-picker__months {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+
+  padding: 10px 16px;
+
+  background-color: $blue-dark;
+}
+
+.date-picker__months div:first-child {
+  color: $white;
+  text-transform: uppercase;
+}
+
+.date-picker__days {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+
+  margin-top: 8px;
+}
+
+.date-picker__periods {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+}
+
+

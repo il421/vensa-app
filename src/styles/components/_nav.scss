@@ -1,27 +1,33 @@
 .nav {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 
-  background: linear-gradient(to bottom right, $blue, $blue-light);
+  padding: $s-size 0;
 }
 
-.nav__logo {
-  margin: $s-size 0;
-
-  animation: heart 1.5s infinite;
-
+.nav__back {
+  padding-left: 15px;
 }
 
-@keyframes heart {
-  0% {
-    transform: scale(1, 1);
-  }
-  50% {
-    transform: scale(1.1, 1.1);
-  }
-  100% {
-    transform: scale(1, 1);
-  }
+.nav__help {
+  position: relative;
+
+  padding-right: 13px;
+  font-size: 1.2rem;
+  font-weight: 300;
+
+  color: $white;
+}
+
+.nav__help::after {
+  position: absolute;
+  content: '';
+
+  right: 0;
+
+  width: 5px;
+  height: 20px;
+
+  background-color: $white;
 }

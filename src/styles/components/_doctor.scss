@@ -1,0 +1,33 @@
+.doctor {
+  margin-bottom: 12px;
+  padding: 14px 12px;
+
+  background-color: $white;
+}
+
+.doctor__info {
+  display: flex;
+  justify-content: start;
+
+  margin-bottom: 16px;
+}
+
+.doctor__img {
+  width: 81px;
+  height: 81px;
+}
+
+.doctor__title {
+  margin-left: 18px;
+}
+
+.doctor__title div:first-child {
+  font-size: $font-size-xxlarge;
+  color: $blue;
+  line-height: 1.2;
+}
+
+.doctor__title div:last-child {
+  font-size: $font-size-small;
+  color: $grey;
+}

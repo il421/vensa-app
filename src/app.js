@@ -4,10 +4,15 @@ import { Provider } from 'react-redux';
 import AppRouter from './routers/AppRouter';
 import configStore from './store/configStore';
 
-import 'normalize.css/normalize.css'
+import moment from 'moment';
+import { fetchDoctorsData } from './actions/doctors';
+import { setInterval } from './actions/dates';
+
+import 'normalize.css/normalize.css';
 import './styles/styles.scss';
 import 'react-dates/lib/css/_datepicker.css';
 
+const currentDate = moment().format('YYYY-MM-DD');
 
 const store = configStore();
 
@@ -17,12 +22,7 @@ const jsx = (
   </Provider>
 );
 
-let hasRendered = false;
-const renderApp = () => {
-  if (!hasRendered) {
-    ReactDOM.render(jsx, document.getElementById('app'));
-    hasRendered = true;
-  }
-};
+store.dispatch(fetchDoctorsData(currentDate));
+store.dispatch(setInterval(moment().valueOf()));
 
-renderApp();
+ReactDOM.render(jsx, document.getElementById('app'));

@@ -1,0 +1,45 @@
+.date-selector {
+  min-width: 66px;
+  min-height: 66px;
+  margin-bottom: 12px;
+}
+
+.date-selector input:checked + label {
+  background-color: $blue-dark;
+
+  border-radius: 50%;
+}
+
+.date-selector input:disabled + label {
+  opacity: .3;
+}
+
+.date-selector input {
+  display: none;
+}
+
+.date-selector label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+
+  padding: 14px 20px;
+}
+
+.date-selector label div {
+  color: $white;
+  font-weight: 300;
+  text-align: center;
+  line-height: 1;
+}
+
+.date-selector label div:first-child {
+  font-size: $font-size-xxlarge;
+}
+
+.date-selector label div:last-child {
+  font-size: $font-size-small;
+  text-transform: lowercase;
+}
+

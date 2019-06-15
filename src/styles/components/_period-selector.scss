@@ -1,0 +1,19 @@
+.period-selector input {
+  display: none;
+}
+
+.period-selector label div {
+  padding: 8px 16px;
+  font-size: $font-size-large;
+  font-weight: 300;
+  text-transform: capitalize;
+
+  color: $white;
+}
+
+.period-selector input:checked + label div {
+  padding: 7px 15px;
+
+  border: 1px solid $white;
+  border-radius: 25px;
+}
