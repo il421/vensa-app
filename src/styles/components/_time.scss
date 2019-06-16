@@ -1,0 +1,17 @@
+.time {
+  padding: 7px 17px;
+  margin-right: 10px;
+
+  font-weight: 300;
+  font-size: $font-size-large;
+  color: $grey;
+  line-height: 1;
+
+  background-color: $ligth;
+  border-radius: 5px;
+}
+
+.time--no {
+  font-size: $font-size-medium;
+
+}

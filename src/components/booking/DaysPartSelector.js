@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PeriodSelector = () => {
+const DaysPartSelector = ({ handleDaysPartChange }) => {
   const periods = [
     {
       title: 'morning',
@@ -8,11 +8,11 @@ const PeriodSelector = () => {
     },
     {
       title: 'afternoon',
-      value: 1
+      value: 12
     },
     {
       title: 'evening',
-      value: 2
+      value: 18
     }
   ];
 
@@ -26,7 +26,8 @@ const PeriodSelector = () => {
               type="radio"
               name="period"
               value={ p.value }
-              defaultChecked={ p.value === periods[1].value }
+              defaultChecked={ p.value === periods[0].value }
+              onChange={ handleDaysPartChange }
             />
             <label htmlFor={`period-${index}`} className="pointer">
               <div>{ p.title }</div>
@@ -38,4 +39,4 @@ const PeriodSelector = () => {
   );
 };
 
-export default PeriodSelector;
+export default DaysPartSelector;

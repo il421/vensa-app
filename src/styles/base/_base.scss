@@ -9,7 +9,8 @@ html {
 body {
   font-family: $font-stack;
   font-size: $font-size-medium;
-  line-height: 1.6
+  line-height: 1.6;
+  overflow-y: hidden;
 }
 
 button {

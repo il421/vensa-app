@@ -1,47 +1,43 @@
 module.exports = {
-    "env": {
-        "browser": true,
-        "es6": true
+  root: true,
+  env: {
+    'browser': true,
+    'es6': true
+  },
+  extends: ['eslint:recommended', 'plugin:react/recommended'],
+  globals: {
+    'Atomics': 'readonly',
+    'SharedArrayBuffer': 'readonly'
+  },
+  parser: "babel-eslint",
+  parserOptions: {
+    'ecmaFeatures': {
+      'jsx': true
     },
-    "extends": ["eslint:recommended", "plugin:react/recommended"],
-    "settings": {
-      "import/resolver": {
-        "webpack": "webpack.config.js"
-      },
-    },
-    "globals": {
-        "Atomics": "readonly",
-        "SharedArrayBuffer": "readonly"
-    },
-    "parserOptions": {
-        "ecmaFeatures": {
-            "jsx": true
-        },
-        "ecmaVersion": 2018,
-        "sourceType": "module"
-    },
-    "plugins": [
-        "react"
+    'ecmaVersion': 2018,
+    'sourceType': 'module'
+  },
+  plugins: [
+    'react'
+  ],
+  rules: {
+    'indent': [
+      'error',
+      2
     ],
-    "rules": {
-        "indent": [
-            "error",
-            2
-        ],
-        "linebreak-style": [
-            "error",
-            "unix"
-        ],
-        "quotes": [
-            "error",
-            "single"
-        ],
-        "semi": [
-            "error",
-            "always"
-        ],
-        "no-console": "off",
-        "react/prop-types": 0,
-
-    }
+    'linebreak-style': [
+      'error',
+      'unix'
+    ],
+    'quotes': [
+      'error',
+      'single'
+    ],
+    'semi': [
+      'error',
+      'always'
+    ],
+    "react/prop-types": 0,
+    "no-console": "off"
+  }
 };

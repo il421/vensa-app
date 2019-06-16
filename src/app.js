@@ -6,7 +6,7 @@ import configStore from './store/configStore';
 
 import moment from 'moment';
 import { fetchDoctorsData } from './actions/doctors';
-import { setInterval } from './actions/dates';
+import { setInterval } from './actions/periods';
 
 import 'normalize.css/normalize.css';
 import './styles/styles.scss';

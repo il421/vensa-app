@@ -1,8 +1,8 @@
 import moment from 'moment';
 
-export const setSelectedDay = (day) => ({
-  type: 'SET_DAY',
-  day
+export const setDaysPart = (daysPart) => ({
+  type: 'SET_DAYS_PART',
+  daysPart
 });
 
 export const setInterval = (day) => {
@@ -22,7 +22,7 @@ export const setInterval = (day) => {
   interval.push(d);
 
   return {
-    type: 'SET_INTERVAL',
+    type: 'SET_DATES_INTERVAL',
     interval
   };
 };

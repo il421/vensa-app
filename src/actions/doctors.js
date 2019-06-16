@@ -19,4 +19,4 @@ export const fetchDoctorsData = (date) => {
       console.log(e);
     }
   };
-}
+};

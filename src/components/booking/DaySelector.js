@@ -1,7 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 
-const DaySelector = ({ day, interval, handleInputChange }) => (
+const DaySelector = ({ interval, handleDayChange }) => (
   <>
     {
       interval.length > 0 &&
@@ -12,9 +12,8 @@ const DaySelector = ({ day, interval, handleInputChange }) => (
             type="radio"
             name="day"
             value={ d }
-            defaultChecked={ moment(day).format('DD') === moment(d).format('DD') }
-            disabled={ moment(day).format('DD') > moment(d).format('DD') }
-            onChange={ handleInputChange }
+            checked={ moment(interval[2]).format('DD') === moment(d).format('DD') }
+            onChange={ handleDayChange }
           />
           <label htmlFor={ `day-${index}` } className="pointer">
             <div>{moment(d).format('DD')}</div>

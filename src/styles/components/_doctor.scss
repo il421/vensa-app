@@ -31,3 +31,12 @@
   font-size: $font-size-small;
   color: $grey;
 }
+
+.doctor__time {
+  display: flex;
+  overflow-x: scroll;
+}
+
+.doctor__time::-webkit-scrollbar {
+  display: none;
+}

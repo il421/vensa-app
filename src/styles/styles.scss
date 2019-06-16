@@ -1,5 +1,6 @@
-@import './base/settings';
+@import './base/variables';
 @import './base/base';
+
 @import 'components/options';
 @import 'components/btn';
 @import 'components/nav';
@@ -9,5 +10,7 @@
 @import 'components/period-selector';
 @import 'components/doctor-list';
 @import 'components/doctor';
+@import 'components/time';
+@import 'components/react-calendar';
 @import './components/content-conteiner';
 @import './components/loader';

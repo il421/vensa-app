@@ -1,7 +1,7 @@
 import { createStore, combineReducers, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import doctorsReducer from '../reducers/doctors';
-import datesReducer from '../reducers/dates';
+import periodsReducer from '../reducers/periods';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
@@ -10,7 +10,7 @@ export default () => {
   const store = createStore(
     combineReducers({
       doctors: doctorsReducer,
-      dates: datesReducer
+      periods: periodsReducer
     }),
     composeEnhancers(applyMiddleware(thunk))
   );
