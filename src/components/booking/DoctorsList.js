@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Doctor from './Doctor';
-import filterAvailableTime from '../../libs/time-filter';
 
 export const DoctorsList = ({ doctors }) => (
   <main className="doctor-list">
@@ -21,8 +20,7 @@ export const DoctorsList = ({ doctors }) => (
 
 const mapStateToProps = (state) => {
   return {
-    doctors: filterAvailableTime(state.doctors, state.periods),
-    // daysPart: state.periods.daysPart,
+    doctors: state.doctors.list,
   };
 };
 

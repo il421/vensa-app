@@ -10,7 +10,11 @@ body {
   font-family: $font-stack;
   font-size: $font-size-medium;
   line-height: 1.6;
-  overflow-y: hidden;
+  overflow-y: auto;
+}
+
+body::-webkit-scrollbar {
+  display: none;
 }
 
 button {
@@ -21,7 +25,8 @@ button:disabled {
   cursor: default;
 }
 
-button:focus {
+button:focus,
+div:focus {
   outline: none;
 }
 

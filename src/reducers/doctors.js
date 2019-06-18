@@ -1,9 +1,21 @@
-const doctorsDefaultState = [];
+const doctorsDefaultState = {
+  profile: {},
+  list: []
+};
 
 export default (state = doctorsDefaultState, action) => {
   switch (action.type) {
   case 'SET_DOCTORS_DATA':
-    return action.doctors;
+    return {
+      ...state,
+      list: action.list
+    };
+
+  case 'SET_DOCTOR_PROFILE':
+    return {
+      ...state,
+      profile: action.profile
+    };
 
   default:
     return state;

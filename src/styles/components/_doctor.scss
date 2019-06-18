@@ -7,9 +7,11 @@
 
 .doctor__info {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
 
   margin-bottom: 16px;
+
+  text-decoration: none;
 }
 
 .doctor__img {

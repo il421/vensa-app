@@ -14,8 +14,14 @@ export class DatePicker extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      displayCalendar: false
+      displayCalendar: false,
+      months: [],
+      day: null
     };
+  }
+
+  componentDidMount() {
+    this.initMonths(this.props.interval[2]);
   }
 
   handleDayChange = (evt) => {
@@ -32,16 +38,52 @@ export class DatePicker extends Component {
   };
 
   toggleDisplayCalendar = () => {
+    if (this.state.day !== null) {
+      this.props.setInterval(this.state.day);
+    }
+
     this.setState((prevState) => ({
       displayCalendar: !prevState.displayCalendar
     }));
+  }
+
+  initMonths(day) {
+    let months = [];
+    months.push(moment(day).valueOf());
+    months.push(moment(day).add(1, 'month').valueOf());
+    months.push(moment(day).add(2, 'month').valueOf());
+
+    this.setState(() => ({ months }));
+  }
+
+  setSelectedDay(day) {
+    this.setState(() => ({ day }));
   }
 
   render() {
     return (
       <div className="date-picker">
         <div className="date-picker__months">
-          <div className="pointer"> { moment(this.props.interval[2]).format('MMMM') }</div>
+          <div className="months">
+            {
+              this.state.displayCalendar ?
+
+                this.state.months.map((m, index) => (
+                  <div key={ index } className="months__month">
+                    <input
+                      id={`month-${index}`}
+                      type="radio"
+                      name="month"
+                      value={ m }
+                      defaultChecked={ m === this.props.interval[2]}
+                    />
+                    <label htmlFor={ `month-${index}` } className="pointer">{ moment(m).format('MMMM') }</label>
+                  </div>
+                )) : (
+                  <div>{moment(this.props.interval[2]).format('MMMM')}</div>
+                )
+            }
+          </div>
           <div
             className="pointer"
             onClick={ this.toggleDisplayCalendar }
@@ -53,7 +95,12 @@ export class DatePicker extends Component {
         {
           this.state.displayCalendar ? (
             <Calendar
+              className="calendar"
               calendarType="Hebrew"
+              formatShortWeekday={ (locale, date) => moment(date).format('dd').slice(0,1) }
+              showFixedNumberOfWeeks={ true }
+              showNavigation={ false }
+              onClickDay={ (day) => this.setSelectedDay(moment(day).valueOf()) }
             />
           ) : (
             <div>

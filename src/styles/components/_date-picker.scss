@@ -8,6 +8,38 @@
   background-color: $blue-dark;
 }
 
+.months {
+  display: flex;
+}
+
+.months__month input {
+  display: none;
+}
+
+.months__month label {
+  color: $white;
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+
+.months__month input:checked + label {
+  opacity: 1;
+  transition: opacity 1s ease;
+  border-bottom: 3px solid $blue-light;
+  padding-bottom: 2px;
+}
+
+.months__month {
+  width: 100%;
+  margin-right: 24px;
+  padding-bottom: 5px;
+
+}
+
+.months__month:last-child {
+  margin-right: 0;
+}
+
 .date-picker__months div:first-child {
   color: $white;
   text-transform: uppercase;
@@ -26,6 +58,7 @@
   display: flex;
   justify-content: space-around;
   align-content: center;
+  padding: 0 20px;
 }
 
 

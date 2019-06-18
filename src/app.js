@@ -21,7 +21,6 @@ const jsx = (
     <AppRouter />
   </Provider>
 );
-
 store.dispatch(fetchDoctorsData(currentDate));
 store.dispatch(setInterval(moment().valueOf()));
 

@@ -1,0 +1,196 @@
+.doctor-profile {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: flex-start;
+
+  padding: 0 15px;
+}
+
+.doctor-profile__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  margin-top: 35px;
+
+  border-bottom: 1px solid lighten($grey-light, 20%);
+}
+
+.info__img {
+  display: block;
+  margin: 0 auto 22px auto;
+}
+
+.info__name {
+  font-size: $font-size-xlarge;
+  font-weight: 500;
+  color: $dark;
+}
+
+.info__title,
+.info__description {
+  margin-bottom: 20px;
+
+  text-align: justify;
+  font-size: $font-size-large;
+  color: $grey-light;
+}
+
+.info__btn {
+  margin-bottom: 20px;
+  padding: 0 30px;
+  width: 100%;
+
+  text-align: center;
+}
+
+.info__btn .btn {
+  padding: 19px 0;
+  width: inherit;
+
+  font-weight: 500;
+  font-size: $font-size-large;
+}
+
+.info__description {
+  padding: 0 15px;
+
+  line-height: 1.4;
+}
+
+.info__description .readMoreText{
+  color: $blue!important;
+}
+
+.doctor-profile__lang,
+.doctor-profile__educ,
+.doctor-profile__address {
+  padding: 23px 0;
+
+  border-bottom: 1px solid lighten($grey-light, 20%);
+}
+
+.doctor-profile__doctors {
+  padding-top: 23px;
+}
+
+.lang__title,
+.educ__title,
+.address__title,
+.doctors__title {
+  margin-bottom: 20px;
+
+  font-weight: 500;
+  font-size: $font-size-large;
+
+  color: $dark;
+}
+
+.address__title--blue {
+  color: $blue;
+}
+
+.lang__list {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  padding: 0 15px;
+
+  font-size: $font-size-large;
+
+  color: $grey-light;
+}
+
+.lang__list div {
+  margin-right: 30px;
+}
+
+.educ__list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  padding: 0 15px;
+
+  font-size: $font-size-large;
+
+  color: $grey-light;
+}
+
+.address__text {
+  margin-bottom: 20px;
+  padding-left: 15px;
+
+  text-align: justify;
+  font-size: $font-size-large;
+  color: $grey-light;
+
+  word-break: break-all;
+}
+
+.address__text img {
+  margin-right: 4px;
+}
+
+.address__map {
+  height: 288px;
+
+  border-radius: 5px;
+  background: url('/img/map__stab.png');
+  background-size: cover;
+}
+
+.address__map .map {
+  border: none;
+}
+
+.doctors__list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  overflow-x: scroll;
+}
+
+.doctors__list::-webkit-scrollbar {
+  display: none;
+}
+
+.doctors__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+
+  padding: 15px;
+  margin-right: 10px;
+
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid lighten($grey-light, 20%);
+}
+
+.doctors__item:last-child {
+  margin-right: 0;
+}
+
+.doctors__item div:nth-child(2) {
+  padding: 7px 0;
+
+  font-size: $font-size-large;
+  line-height: 1.4;
+  color: $dark;
+}
+
+.doctor-profile__footer div {
+  padding: 40px 0;
+
+  text-align: center;
+  color: $grey-light;
+}
+

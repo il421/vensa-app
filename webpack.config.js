@@ -26,6 +26,15 @@ module.exports = () => {
               }
             },
             {
+              loader: 'postcss-loader',
+              options: {
+                sourceMap: true,
+                config: {
+                  path: 'postcss.config.js'
+                }
+              }
+            },
+            {
               loader: 'sass-loader',
               options: {
                 sourceMap: true
@@ -33,7 +42,16 @@ module.exports = () => {
             }
           ]
         })
-      }]
+      },
+      {
+        test: /\.(ttf|svg|woff|woff2|eot|png)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {},
+          },
+        ],
+      },]
     },
     plugins: [CSSExtract],
     devtool: 'inline-source-map',
@@ -41,6 +59,9 @@ module.exports = () => {
       contentBase: path.join(__dirname, 'public'),
       historyApiFallback: true,
       publicPath: '/dist/'
+    },
+    node: {
+      fs: 'empty'
     }
   };
 };

@@ -1,3 +1,4 @@
+@import "./base/fonts";
 @import './base/variables';
 @import './base/base';
 
@@ -10,7 +11,8 @@
 @import 'components/period-selector';
 @import 'components/doctor-list';
 @import 'components/doctor';
+@import 'components/doctor-profile';
 @import 'components/time';
 @import 'components/react-calendar';
 @import './components/content-conteiner';
-@import './components/loader';
+@import './components/animation';
