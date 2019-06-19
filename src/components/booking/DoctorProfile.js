@@ -1,19 +1,12 @@
 import React, { Component } from 'react';
-import { withRouter, Link } from 'react-router-dom';
-import {connect} from 'react-redux';
-
-import { fetchDoctorProfile } from '../../actions/doctors';
+import { Link } from 'react-router-dom';
 
 import ReadMoreAndLess from 'react-read-more-less';
 import Iframe from 'react-iframe';
 
+import { Media } from '../../libs/media-config';
+
 export class DoctorProfile extends Component {
-
-  async displayDoctorProfile(id) {
-    await this.props.fetchDoctorProfile(id);
-
-    this.props.history.push(`/profile/${id}`);
-  }
 
   componentDidUpdate() {
     window.scrollTo(0, 0);
@@ -26,7 +19,7 @@ export class DoctorProfile extends Component {
           <div className="doctor-profile__info info">
             <img
               className="info__img"
-              src={`https://frontendchallenge2019.azurewebsites.net${ this.props.profile.PictureURL }`}
+              src={ Media.getUrl().DoctorImg + this.props.profile.PictureURL }
               width="130" height="130"
               alt={`Picture of ${ this.props.profile.Name }`}
             />
@@ -76,9 +69,8 @@ export class DoctorProfile extends Component {
             </div>
             <div className="address__map">
               <Iframe
-                url="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3190.445956178146!2d174.80548621540095!3d-36.903600490282976!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d0d48e70eeb143d%3A0x1d14688308f9b073!2s459+Great+South+Rd%2C+Penrose%2C+Auckland+1061!5e0!3m2!1sen!2snz!4v1560770332914!5m2!1sen!2snz"
                 width="100%"
-                height="288px"
+                url={ Media.getUrl().GoogleMap }
                 id="map"
                 className="map"
                 display="initial"
@@ -96,7 +88,7 @@ export class DoctorProfile extends Component {
                     <div key={index} className="doctors__item">
                       <div>
                         <img
-                          src={`https://frontendchallenge2019.azurewebsites.net${doctor.PictureURL}`}
+                          src={ Media.getUrl().DoctorImg + doctor.PictureURL}
                           width="101"
                           height="101"
                           alt={`Picture of ${doctor.Name}`}
@@ -106,12 +98,12 @@ export class DoctorProfile extends Component {
                         {doctor.Name}
                       </div>
                       <div>
-                        <div
+                        <Link
                           className="btn btn---book-now pointer"
-                          onClick={() => this.displayDoctorProfile(doctor.Id)}
+                          to="/booking"
                         >
                         Book now
-                        </div>
+                        </Link>
                       </div>
                     </div>
                   ))
@@ -128,12 +120,4 @@ export class DoctorProfile extends Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    fetchDoctorProfile: (id) => dispatch(fetchDoctorProfile(id))
-  };
-};
-
-export default withRouter(
-  connect (undefined, mapDispatchToProps)(DoctorProfile)
-);
+export default DoctorProfile;

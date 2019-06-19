@@ -1,0 +1,43 @@
+.registration {
+  padding: 44px;
+
+  background: linear-gradient(to bottom right, $blue, $blue-light);
+}
+
+.registration__full-name {
+  padding-bottom: 5px;
+  height: 55px;
+}
+
+.registration__full-name input {
+  height: inherit;
+  max-width: 287px;
+
+  font-size: 30px;
+  font-weight: 100;
+  color: $white;
+
+  background: none;
+  border: none;
+
+  text-transform: uppercase;
+}
+
+.registration__full-name--visiable {
+  border-bottom: 1px solid $white;
+  animation: fadeInUp 1s ease;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}

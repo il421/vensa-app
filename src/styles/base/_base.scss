@@ -26,8 +26,13 @@ button:disabled {
 }
 
 button:focus,
-div:focus {
-  outline: none;
+div:focus,
+input :focus {
+  outline: none!important;
+}
+
+:focus {
+  outline: none!important;
 }
 
 .pointer {

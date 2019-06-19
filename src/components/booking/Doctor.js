@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
 
 import { fetchDoctorProfile } from '../../actions/doctors';
+import { Media } from '../../libs/media-config';
 
 import Time from './Time';
 import Utilities from '../../libs/utilities';
@@ -23,7 +24,7 @@ export const Doctor = ({ Id, Name, Title, PictureURL, AvailableSlots, daysPart, 
       >
 
         <div className="doctor__img">
-          <img src={ 'https://frontendchallenge2019.azurewebsites.net' + PictureURL } width="81" height="81" />
+          <img src={ Media.getUrl().DoctorImg + PictureURL } width="81" height="81" />
         </div>
         <div className="doctor__title">
           <div>{Name}</div>

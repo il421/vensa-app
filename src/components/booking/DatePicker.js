@@ -15,8 +15,7 @@ export class DatePicker extends Component {
     super(props);
     this.state = {
       displayCalendar: false,
-      months: [],
-      day: null
+      months: []
     };
   }
 
@@ -38,10 +37,6 @@ export class DatePicker extends Component {
   };
 
   toggleDisplayCalendar = () => {
-    if (this.state.day !== null) {
-      this.props.setInterval(this.state.day);
-    }
-
     this.setState((prevState) => ({
       displayCalendar: !prevState.displayCalendar
     }));
@@ -57,7 +52,10 @@ export class DatePicker extends Component {
   }
 
   setSelectedDay(day) {
-    this.setState(() => ({ day }));
+    const formatedDate = moment(Number(day)).format('YYYY-MM-DD');
+
+    this.props.setInterval(Number(day));
+    this.props.fetchDoctorsData(formatedDate);
   }
 
   render() {
@@ -95,7 +93,6 @@ export class DatePicker extends Component {
         {
           this.state.displayCalendar ? (
             <Calendar
-              className="calendar"
               calendarType="Hebrew"
               formatShortWeekday={ (locale, date) => moment(date).format('dd').slice(0,1) }
               showFixedNumberOfWeeks={ true }

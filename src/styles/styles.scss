@@ -2,17 +2,21 @@
 @import './base/variables';
 @import './base/base';
 
-@import 'components/options';
-@import 'components/btn';
-@import 'components/nav';
-@import 'components/header';
-@import 'components/date-picker';
-@import 'components/date-selector';
-@import 'components/period-selector';
-@import 'components/doctor-list';
-@import 'components/doctor';
-@import 'components/doctor-profile';
-@import 'components/time';
-@import 'components/react-calendar';
-@import './components/content-conteiner';
-@import './components/animation';
+@import 'components/common/options';
+@import 'components/common/btn';
+@import 'components/common/content-conteiner';
+@import 'components/common/animation';
+
+@import 'components/booking/nav';
+@import 'components/booking/header';
+@import 'components/booking/date-picker';
+@import 'components/booking/date-selector';
+@import 'components/booking/period-selector';
+@import 'components/booking/doctor-list';
+@import 'components/booking/doctor';
+@import 'components/booking/doctor-profile';
+@import 'components/booking/time';
+@import 'components/booking/react-calendar';
+
+@import 'components/registration/registration';
+@import 'components/registration/form';

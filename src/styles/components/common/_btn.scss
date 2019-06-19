@@ -22,6 +22,19 @@
   color: $white;
 }
 
+.btn--options:hover {
+  border-color: transparent;
+  background-color: $white;
+  color: $blue-light;
+
+  transition: background-color .6s, color .6s ease;
+}
+
+.btn--options:active {
+  transform: scale(0.9);
+  transition: transform .3s ease-in;
+}
+
 .btn--link {
   background: none;
   color: white;

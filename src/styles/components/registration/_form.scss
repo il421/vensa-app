@@ -1,0 +1,241 @@
+.form {
+
+}
+
+.form div > label {
+  font-size: $font-size-xsmall;
+
+  color: $white;
+
+  text-transform: capitalize;
+}
+
+.form div > input {
+  max-width: 287px;
+  padding-bottom: 5px;
+
+  font-weight: 100;
+  color: $white;
+
+  border: none;
+  background: none;
+}
+
+.form--input  {
+  display: flex;
+  flex-direction: column;
+  height: 67px;
+  border-bottom: 1px solid $white;
+}
+
+.form--blur {
+  opacity: .5;
+}
+
+.form__wrapper {
+  height: 310px;
+  overflow-y: scroll;
+}
+
+.form__wrapper::-webkit-scrollbar {
+  display: none;
+}
+
+@keyframes form {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.form__title {
+  padding-right: 95px;
+  padding-top: 119px;
+  margin-bottom: 75px;
+
+  font-size: $font-size-medium;
+  font-weight: 300;
+
+  color: $white;
+
+  text-transform: uppercase;
+
+  @media (min-width: 375px) {
+    padding-right: 150px;
+  }
+}
+
+.form__title--hide {
+  padding-top: 0;
+  margin-bottom: 0;
+  transition: padding-top 1s, margin-bottom 1s ease-out;
+}
+
+@keyframes title {
+  0% {
+    transform: translateY(120px);
+  }
+
+  50% {
+    transform: translateY(120px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.form__name input {
+  font-size: 36px;
+}
+
+.form__surname {
+}
+
+.form__surname input {
+  font-size: 30px;
+}
+
+.form__date input,
+.form__phone input,
+.form__email input,
+.form__password input {
+  font-size:24px;
+}
+
+.form__date input,
+.form__phone input,
+.form__surname input,
+.form__name input {
+  text-transform: uppercase;
+}
+
+.form__phone {
+}
+
+.form__email {
+}
+
+.form__password {
+  margin-bottom: 35px;
+}
+
+input[type="password"] {
+  font:small-caption;
+  font-size:30px
+}
+
+.form__info {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 73px;
+
+  font-size: $font-size-small;
+  font-weight: 300;
+
+  color: $white;
+
+  border: none;
+}
+
+.form__info a {
+  text-decoration: underline;
+}
+
+.form__info div input {
+  width: 10px;
+}
+
+// Custom Checkbox
+.form__info input {
+  display: none;
+}
+
+.form__info div:first-child {
+  margin-right: 10px;
+}
+
+.form__info label {
+  position: relative;
+  display: block;
+
+  width: 20px;
+  height: 20px;
+
+  border: 1px solid $white;
+  border-radius: 3px;
+  background: transparent;
+
+  cursor: pointer;
+
+  &:after {
+    display: none;
+    position: absolute;
+    content: '';
+
+    width: 12px;
+    height: 12px;
+
+    top: 3px;
+    left: 3px;
+    border-radius: 50%;
+    background: $white;
+  }
+}
+
+.form__info input:checked + label:after {
+  display: block;
+}
+// finish
+
+.form__submit {
+  text-align: center;
+  border: none;
+}
+
+.form__submit a {
+  position: relative;
+  font-weight: 200;
+  font-size: 22px;
+
+  color: $white;
+  border: none;
+  background: none;
+
+  text-decoration: none;
+
+  text-transform: uppercase;
+
+  // Button Arrow
+  &:after {
+    position: absolute;
+    content: '';
+
+    right: -17px;
+    top: 6px;
+
+    width: 1px;
+    height: 10px;
+
+    background: $white;
+    transform: rotate(-45deg);
+  }
+
+  &:before {
+    position: absolute;
+    content: '';
+
+    right: -17px;
+    top: 13px;
+
+    width: 1px;
+    height: 10px;
+
+    background: $white;
+    transform: rotate(45deg);
+  }
+}
+

@@ -151,7 +151,7 @@
 .doctors__list {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
 
   overflow-x: scroll;
 }
@@ -166,6 +166,7 @@
   align-items: center;
   justify-content: space-between;
 
+  width: 149px;
 
   padding: 15px;
   margin-right: 10px;
