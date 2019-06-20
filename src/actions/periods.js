@@ -9,6 +9,7 @@ export const setInterval = (day) => {
   let interval = [];
   interval.push(day);
 
+  // set interval of yesterday, today, and tomorrow
   for(let i = 1; i < 3; i++) {
     let d = moment(day).subtract(i, 'day').valueOf();
     interval.unshift(d);

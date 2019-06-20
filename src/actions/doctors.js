@@ -1,5 +1,4 @@
 import axios from 'axios';
-import moment from "../components/booking/Doctor";
 
 const SCHEDULE = 'https://frontendchallenge2019.azurewebsites.net/api/Schedule/';
 const PROVIDER = 'https://frontendchallenge2019.azurewebsites.net/api/Provider/';

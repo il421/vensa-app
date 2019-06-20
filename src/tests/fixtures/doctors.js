@@ -1,5 +1,3 @@
-import moment from 'moment';
-
 const list = [
   {
     Id: 'e538c28d-52df-0654-800f-6145909aca28',

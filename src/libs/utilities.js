@@ -1,11 +1,9 @@
 import moment from 'moment';
-
 const HOURS_FORMAT = 'HH';
 
 export default class Utilities {
 
   static filterAvailableTime(availableSlots, daysPart) {
-
     let slots = [];
     Object.keys(availableSlots).forEach((key) => {
       slots.push(availableSlots[key]);

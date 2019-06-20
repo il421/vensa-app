@@ -26,10 +26,12 @@ const AppRouter = (props) => (
             <Route path="/" component={ OptionsPage } exact={ true } />
             <Route path="/booking" component={ Booking } />
             <Route path="/profile/:id" render={ () => (
+              // prevent refreshing problems
               isEmpty(props.profile) ? (
                 <Redirect to="/booking" />
               ) : (
-                <DoctorProfile profile={props.profile} doctors={props.doctors} onUpdate={() => window.scrollTo(0, 0)} />
+                // pass props to Doctor Profile via router
+                <DoctorProfile profile={props.profile} doctors={props.doctors} />
               )
             )} />
 

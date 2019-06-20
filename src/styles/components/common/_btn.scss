@@ -25,9 +25,9 @@
 .btn--options:hover {
   border-color: transparent;
   background-color: $white;
-  color: $blue-light;
+  color: $blue;
 
-  transition: background-color .6s, color .6s ease;
+  transition: background-color .5s, color .5s ease-in;
 }
 
 .btn--options:active {
@@ -49,4 +49,10 @@
 
 .btn---book-now {
   width: 117px;
+}
+
+.btn---book-now:hover {
+  background-color: $blue;
+  color: $white;
+  transition: background-color 0.5s, color 0.5s ease;
 }

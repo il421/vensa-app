@@ -54,6 +54,12 @@
   font-size: $font-size-large;
 }
 
+.info__btn .btn:hover {
+  background-color: $blue;
+  color: $white;
+  transition: background-color 0.5s, color 0.5s ease;
+}
+
 .info__description {
   padding: 0 15px;
 
@@ -146,6 +152,7 @@
 
 .address__map .map {
   border: none;
+  height: 100%;
 }
 
 .doctors__list {

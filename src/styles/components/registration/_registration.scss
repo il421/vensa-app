@@ -2,16 +2,30 @@
   padding: 44px;
 
   background: linear-gradient(to bottom right, $blue, $blue-light);
+  overflow-y: scroll;
+}
+
+registration::-webkit-scrollbar {
+  display: none;
 }
 
 .registration__full-name {
   padding-bottom: 5px;
   height: 55px;
+
+  opacity: 0;
+  border-bottom: 1px solid $white;
+}
+
+.registration__full-name--visible {
+  opacity: 1;
+
+  transition: opacity 1s ease;
 }
 
 .registration__full-name input {
   height: inherit;
-  max-width: 287px;
+  width: 100%;
 
   font-size: 30px;
   font-weight: 100;
@@ -21,23 +35,33 @@
   border: none;
 
   text-transform: uppercase;
+  text-align: center;
 }
 
-.registration__full-name--visiable {
-  border-bottom: 1px solid $white;
-  animation: fadeInUp 1s ease;
+.registration__title {
+  padding-right: 95px;
+  padding-top: 119px;
+  margin-bottom: 75px;
+
+  font-size: $font-size-medium;
+  font-weight: 300;
+
+  color: $white;
+
+  text-transform: uppercase;
+
+  opacity: 1;
+
+  @media (min-width: 375px) {
+    padding-right: 150px;
+  }
 }
 
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    -webkit-transform: translate3d(0, 100%, 0);
-    transform: translate3d(0, 100%, 0);
-  }
+.registration__title--hide {
+  padding-top: 0;
+  margin-bottom: 0;
 
-  to {
-    opacity: 1;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
+  opacity: 0;
+
+  transition: padding-top 1s, margin-bottom 1s, opacity 1s ease-out;
 }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import DaySelector from './DaySelector';
+import MonthsSelector from './MonthsSelector';
 import PeriodSelector from './DaysPartSelector';
 import Calendar from 'react-calendar/dist/entry.nostyle';
 
@@ -15,7 +16,8 @@ export class DatePicker extends Component {
     super(props);
     this.state = {
       displayCalendar: false,
-      months: []
+      months: [],
+      activeStartDay: new Date(),
     };
   }
 
@@ -32,6 +34,7 @@ export class DatePicker extends Component {
   }
 
   handleDaysPartChange = (evt) => {
+    // set days part
     const data = evt.target.value;
     this.props.setDaysPart(Number(data));
   };
@@ -42,7 +45,8 @@ export class DatePicker extends Component {
     }));
   }
 
-  initMonths(day) {
+  initMonths = (day) => {
+    // getting current and two next months
     let months = [];
     months.push(moment(day).valueOf());
     months.push(moment(day).add(1, 'month').valueOf());
@@ -51,37 +55,30 @@ export class DatePicker extends Component {
     this.setState(() => ({ months }));
   }
 
-  setSelectedDay(day) {
+  setSelectedDay = (day) => {
+    // set selected date and fetch new timetable
     const formatedDate = moment(Number(day)).format('YYYY-MM-DD');
 
     this.props.setInterval(Number(day));
     this.props.fetchDoctorsData(formatedDate);
   }
 
+  populateMonthDates = (month) => {
+    const activeStartDay = moment(month).toDate();
+    this.setState(() => ({ activeStartDay }));
+  }
+
   render() {
     return (
       <div className="date-picker">
         <div className="date-picker__months">
-          <div className="months">
-            {
-              this.state.displayCalendar ?
 
-                this.state.months.map((m, index) => (
-                  <div key={ index } className="months__month">
-                    <input
-                      id={`month-${index}`}
-                      type="radio"
-                      name="month"
-                      value={ m }
-                      defaultChecked={ m === this.props.interval[2]}
-                    />
-                    <label htmlFor={ `month-${index}` } className="pointer">{ moment(m).format('MMMM') }</label>
-                  </div>
-                )) : (
-                  <div>{moment(this.props.interval[2]).format('MMMM')}</div>
-                )
-            }
-          </div>
+          <MonthsSelector
+            months={ this.state.months }
+            displayCalendar={ this.state.displayCalendar }
+            populateMonthDates={ this.populateMonthDates }
+          />
+
           <div
             className="pointer"
             onClick={ this.toggleDisplayCalendar }
@@ -98,6 +95,7 @@ export class DatePicker extends Component {
               showFixedNumberOfWeeks={ true }
               showNavigation={ false }
               onClickDay={ (day) => this.setSelectedDay(moment(day).valueOf()) }
+              activeStartDate={ this.state.activeStartDay }
             />
           ) : (
             <div>
