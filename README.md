@@ -2,7 +2,7 @@
 Ilya Suglobov
 # About Project
 
-Foobar is a Python library for dealing with word pluralization.
+The project is designed for The Vensa Company.
 
 ## Installation
 
@@ -10,16 +10,18 @@ Use the package manager yarn or npm to install dependencies.
 
 ```
 yarn install
-or
-npm install
 ```
 
 ## Usage
 
 ```
 yarn start
-or
-npm run start
+```
+
+## Testing
+
+```
+yarn test
 ```
 
 ## Technologies and Libraries
@@ -27,5 +29,5 @@ npm run start
 - Redux
 - SCSS
 - Webpack
-- Jest
+- Jest + Enzyme
 

@@ -13,7 +13,8 @@ export const Form = ({ form, filterFocusedInputs, setUserDetails, history }) => 
     birth: '',
     phone: '',
     email: '',
-    password: ''
+    password: '',
+    focus: true,
   });
 
   const handleInputChange = (evt) => {
@@ -27,11 +28,9 @@ export const Form = ({ form, filterFocusedInputs, setUserDetails, history }) => 
   };
 
   const formFieldsFilter = () => {
-    const state = { ...data };
-
-    forOwn(state, (value, key) => {
+    forOwn(data, (value, key) => {
       // iterate state to find not filled fields && update prop
-      if (key !== 'agree') {
+      if (key !== 'agree' && key !== 'focus') {
         let filledOut = false;
         let hidden = false;
 
@@ -39,6 +38,7 @@ export const Form = ({ form, filterFocusedInputs, setUserDetails, history }) => 
           filledOut = true;
         }
 
+        // if the field is name or surname set hidden true
         if (key === 'name' || key === 'surname') {
           if (value.toString() !== '') {
             hidden = true;
@@ -48,6 +48,7 @@ export const Form = ({ form, filterFocusedInputs, setUserDetails, history }) => 
         filterFocusedInputs({ [key]: [filledOut, hidden] });
       }
     });
+    setValue({ ...data, focus: !data.focus });
   };
 
   const submitForm = async (evt) => {
@@ -99,6 +100,7 @@ export const Form = ({ form, filterFocusedInputs, setUserDetails, history }) => 
                   onChange={ handleInputChange }
                   onBlur={ formFieldsFilter }
                   autoFocus={ f.autofocus }
+                  disabled={ f.id !== 'name' && data.name.length === 0 }
                   required />
                 {
                   f.hasLabel &&

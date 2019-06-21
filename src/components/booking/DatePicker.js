@@ -80,41 +80,38 @@ export class DatePicker extends Component {
           />
 
           <div
-            className="pointer"
+            className="date-picker__btn pointer"
             onClick={ this.toggleDisplayCalendar }
           >
             <img src="./img/icons/icon--calendar.svg" alt="Display calendar icon." />
           </div>
         </div>
 
-        {
-          this.state.displayCalendar ? (
-            <Calendar
-              calendarType="Hebrew"
-              formatShortWeekday={ (locale, date) => moment(date).format('dd').slice(0,1) }
-              showFixedNumberOfWeeks={ true }
-              showNavigation={ false }
-              onClickDay={ (day) => this.setSelectedDay(moment(day).valueOf()) }
-              activeStartDate={ this.state.activeStartDay }
+        <Calendar
+          className={ (!this.state.displayCalendar && 'react-calendar--toggle') }
+          calendarType="Hebrew"
+          formatShortWeekday={ (locale, date) => moment(date).format('dd').slice(0,1) }
+          showFixedNumberOfWeeks={ true }
+          showNavigation={ false }
+          onClickDay={ (day) => this.setSelectedDay(moment(day).valueOf()) }
+          activeStartDate={ this.state.activeStartDay }
+        />
+        <div>
+          <div className="date-picker__days">
+            <DaySelector
+              interval={ this.props.interval }
+              day={ this.props.interval[2] }
+              handleDayChange={ this.handleDayChange }
             />
-          ) : (
-            <div>
-              <div className="date-picker__days">
-                <DaySelector
-                  interval={ this.props.interval }
-                  day={ this.props.interval[2] }
-                  handleDayChange={ this.handleDayChange }
-                />
-              </div>
+          </div>
 
-              <div className="date-picker__periods">
-                <PeriodSelector
-                  handleDaysPartChange={ this.handleDaysPartChange }
-                />
-              </div>
-            </div>
-          )
-        }
+          <div className="date-picker__periods">
+            <PeriodSelector
+              handleDaysPartChange={ this.handleDaysPartChange }
+            />
+          </div>
+        </div>
+
       </div>
     );
   }

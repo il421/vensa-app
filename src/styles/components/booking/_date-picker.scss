@@ -1,19 +1,50 @@
+.date-picker {
+  position: relative;
+}
+
 .date-picker__months {
   display: flex;
   justify-content: space-between;
   align-content: center;
 
-  padding: 10px 16px;
+  min-height: 45px;
+  padding: 0 16px;
 
   background-color: $blue-dark;
 }
 
+.date-picker__btn {
+  display: flex;
+}
+
+@keyframes calendar {
+  from {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+
+  50% {
+    -webkit-transform: scale3d(1.05, 1.05, 1.05);
+    transform: scale3d(1.05, 1.05, 1.05);
+  }
+
+  to {
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
 .months {
   display: flex;
+  align-items: center;
 }
 
 .months__month input {
   display: none;
+}
+
+.months--test {
+  animation-name: calendar;
 }
 
 .months__month label {
@@ -31,9 +62,9 @@
 
 .months__month {
   width: 100%;
+  height: 26px;
   margin-right: 24px;
   padding-bottom: 5px;
-
 }
 
 .months__month:last-child {
@@ -50,6 +81,7 @@
   justify-content: space-between;
   align-content: center;
 
+  height: 78px;
   margin-top: 8px;
   padding: 0 16px;
 }
