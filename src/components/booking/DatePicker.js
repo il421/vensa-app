@@ -88,7 +88,7 @@ export class DatePicker extends Component {
         </div>
 
         <Calendar
-          className={ (!this.state.displayCalendar && 'react-calendar--toggle') }
+          className={ !this.state.displayCalendar ? 'react-calendar--toggle' : '' }
           calendarType="Hebrew"
           formatShortWeekday={ (locale, date) => moment(date).format('dd').slice(0,1) }
           showFixedNumberOfWeeks={ true }
