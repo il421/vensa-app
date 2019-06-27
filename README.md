@@ -15,6 +15,7 @@ yarn install
 ## Usage
 
 ```
+yarn build
 yarn start
 ```
 
