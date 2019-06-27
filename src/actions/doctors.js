@@ -14,16 +14,12 @@ export const setDoctorProfile = (profile) => ({
 });
 
 export const fetchDoctorsData = (date) => {
-  return async (dispatch) => {
-    try {
-      const res = await axios.get(SCHEDULE + date);
+  return (dispatch) => {
+    return axios.get(SCHEDULE + date).then((res) => {
       dispatch(setDoctorsData(
         JSON.parse(res.data)
       ));
-
-    } catch (e) {
-      console.log(e);
-    }
+    });
   };
 };
 
